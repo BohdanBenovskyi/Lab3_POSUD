@@ -25,6 +25,7 @@ int main()
 	initMatrix(arr, n);
 	showMatrix(arr, n);
 	showDiagonal(arr, n);
+	findMaxValue(arr, n);
 	releaseMatrix(arr, n);
 	
 
@@ -72,5 +73,15 @@ void showDiagonal(int** m, int n) {
 }
 
 void findMaxValue(int** m, int n) {
-
+	int maxVal = 0;
+	for (int j = 0; j < n; j++) {
+		for (int i = 0; i < j + 1; i++) {
+			if (j == 0 && i == 0)
+				maxVal = m[j][i];
+			else
+				if(m[j][i] > maxVal)
+					maxVal = m[j][i];
+		}
+	}
+	cout << "Max value: " << maxVal << "\n";
 }
