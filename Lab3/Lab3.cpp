@@ -22,6 +22,16 @@ int main()
 	allocMatrix(arr, n);
 	initMatrix(arr, n);
 	showMatrix(arr, n);
+
+	cout << "\n==========================";
+	for (int j = 0; j < n; j++) {
+		for (int i = 0; i < j+1; i++) {
+			cout << arr[j][i] << "\t";
+		}
+		cout << "\n";
+	}
+	cout << "==========================\n";
+
 	releaseMatrix(arr, n);
 	
 
